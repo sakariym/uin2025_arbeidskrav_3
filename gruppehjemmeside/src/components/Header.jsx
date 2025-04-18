@@ -1,3 +1,4 @@
+//  Header.jsx
 import { Link } from 'react-router-dom';
 const members = [
     {id:'1', name: 'Anna'},
@@ -7,7 +8,7 @@ const members = [
 const Header = () => {
     return (
         <header className="bg-blue-600 text-white p-4 flex justify-between items-center">
-        <div className="text-lg font-bold">Gruppe 3B</div>
+        <div className="text-lg font-bold">Gruppe 32</div>
         <nav className="space-x-4">
           <Link to="/">Hjem</Link>
           {members.map((member) => (
