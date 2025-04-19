@@ -6,7 +6,14 @@ import {schemaTypes} from './schemaTypes'
 export default defineConfig({
   name: 'default',
   title: 'backend_arbeidskrav3',
-
+type: 'document',
+fields: [
+  {
+    name: 'name',
+    title: 'Name',
+    type: 'string',
+  },
+],
   projectId: 'o4kavlqr',
   dataset: 'production',
 
