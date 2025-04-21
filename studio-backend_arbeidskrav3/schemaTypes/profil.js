@@ -4,7 +4,7 @@ export default {
   type: 'document',
   fields: [
     {name: 'image',
-    type: 'string',
+    type: 'image',
     },
     {
       
