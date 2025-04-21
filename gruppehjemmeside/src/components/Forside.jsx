@@ -1,40 +1,48 @@
+// Forside.jsx
 import { Link } from 'react-router-dom';
-
-const members = [
-  { id: '1', name: 'Anna', bio: 'Frontend utvikler' },
-  { id: '2', name: 'Jonas', bio: 'Backend ekspert' },
-  { id: '3', name: 'Emil', bio: 'Fullstack entusiast' }
-];
-
-const groupLog = [
-  "01.04 - Oppstartsmøte",
-  "05.04 - Designvalg bestemt",
-  "10.04 - Første kodegjennomgang",
-  "15.04 - Testing og bugfix"
-];
+import { useEffect, useState } from 'react';
+import { fetchAllProfiles } from '../sanity/profileServices';
 
 const Forside = () => {
-  return (
-    <div className="max-w-4xl mx-auto">
-      <h1 className="text-2xl font-bold mb-6">Velkommen til Gruppe 32</h1>
+  const [medlemmer, setmedlemmer] = useState([]);
+  const [gruppelogg, setgruppelogg] = useState([]);
 
-      <h2 className="text-xl font-semibold mb-4">Medlemmer</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-        {members.map(member => (
-          <div key={member.id} className="border p-4 rounded-xl shadow hover:shadow-lg transition">
-            <h3 className="text-lg font-bold mb-2">{member.name}</h3>
-            <p className="mb-2">{member.bio}</p>
-            <Link to={`/profil/${member.id}`} className="text-blue-500 hover:underline">
+  useEffect(() => {
+    fetchAllProfiles().then(data => {
+      setmedlemmer(data);
+      
+      const alleLogger = data.flatMap(medlem => 
+        (medlem.Logg || []).map(log => ({
+          ...log,
+          medlemName: medlem.name
+        }))
+      );
+      
+      setgruppelogg(alleLogger.sort((a, b) => new Date(b.dato) - new Date(a.dato)));
+    });
+  }, []);
+
+  return (
+    <div>
+      <h1>Velkommen til Gruppe 32</h1>
+      <h2>Medlemmer</h2>
+      <div>
+        {medlemmer.map(medlem => (
+          <div key={medlem._id}>
+            <h3>{medlem.name}</h3>
+            <p>{medlem.email}</p>
+            <Link to={`/profil/${medlem.name}`}>
               Se profil
             </Link>
           </div>
         ))}
       </div>
-
-      <h2 className="text-xl font-semibold mb-4">Gruppelogg</h2>
-      <ul className="list-disc list-inside space-y-2">
-        {groupLog.map((entry, index) => (
-          <li key={index}>{entry}</li>
+      <h2>Gruppelogg</h2>
+      <ul>
+        {gruppelogg.map((indeks, index) => (
+          <li key={index}>
+            {new Date(indeks.dato).toLocaleDateString()} - {indeks.medlemName}: {indeks.Arbeid} ({indeks.Timer} timer)
+          </li>
         ))}
       </ul>
     </div>

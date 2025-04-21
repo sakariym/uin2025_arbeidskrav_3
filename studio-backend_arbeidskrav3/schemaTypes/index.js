@@ -1,2 +1,3 @@
-import biography from "./biography"
-export const schemaTypes = [biography]
+import profil from './profil'
+
+export const schemaTypes = [profil]
