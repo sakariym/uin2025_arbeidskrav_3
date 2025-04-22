@@ -1,8 +1,10 @@
   import './App.css'
-  import {Route, Routes} from "react-router";
+  import {Route, Routes} from 'react-router-dom';
   import Forside from './components/Forside';
   import Header from './components/Header';
   import Profil from './components/Profil';
+  import Home from './components/Home';
+
 
 
   function App() {
