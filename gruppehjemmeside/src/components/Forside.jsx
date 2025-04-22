@@ -31,16 +31,21 @@ const Forside = () => {
      
 
         {medlemmer.map(medlem => (
-          <div key={medlem._id}>
-                        <h3>{medlem.name}</h3>
-
-          <div className='image-row' key={medlem._id}>
+          <div key={medlem._id} className='div-Top'>
+          <div className='card'>
+            <div className='image-container' >
 
             <img className='image-profile' src={medlem?.image ? urlFor(medlem.image).url() : ""} alt="Medlembilde" />
-            <p>{medlem.email}</p>
+            </div>
+          <div className='image-row' key={medlem._id}>
+
+          <h3>{medlem.name}</h3>
+          <p>{medlem.email}</p>
             <Link to={`/profil/${medlem.name}`}>
               Se profil
             </Link>
+          
+          </div>
           </div>
           </div>
         ))}

@@ -1,10 +1,21 @@
-
-.image-row {
+.div-Top {
   display: flex;
-  border-radius: 20px;
-  margin: 20px;
-  gap: 2rem;
-  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 1 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 250px; 
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
   margin-bottom: 1rem;
 }
 
@@ -12,6 +23,35 @@
   width: 100px;
   height: 100px;
   object-fit: cover;
-  border-radius: 10px;
-  border: 2px solid #ccc;
+  border: 2px solid #d4cdcd;
+}
+
+.card h3 {
+  font-size: 1.6rem;
+  margin-top: 0.5rem;
+  color: rgb(0, 0, 0);
+
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: rgb(181, 20, 178);
+  margin-bottom: 1rem;
+}
+
+.card a {
+  text-decoration: none;
+  color: #254be1;
+  font-weight: bold;
+}
+
+.card a:hover {
+  text-decoration: underline;}
+
+.image-row {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  align-items: center;  
+  flex-wrap: wrap;
 }
