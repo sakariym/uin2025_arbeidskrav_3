@@ -15,8 +15,8 @@
     <Header />
     
     <Routes>
-      <Route path="/" element={<Home />}></Route>
-      <Route path="/" element={<Forside />}></Route>
+      <Route path="/home" element={<Home />} />
+      <Route path="/forside" element={<Forside />}></Route>
       <Route path="/profil/:id" element={<Profil />} />
       </Routes>
       </>
