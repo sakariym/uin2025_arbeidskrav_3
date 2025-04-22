@@ -1,0 +1,17 @@
+
+.image-row {
+  display: flex;
+  border-radius: 20px;
+  margin: 20px;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.image-profile {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+}

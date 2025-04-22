@@ -45,7 +45,7 @@ export default function Profile() {
       ) : (
         <section>
           <h2>Profile: {currentProfile?.name}</h2>
-          <div>
+          <div className="image-row"  >
           <img src={currentProfile?.image ? urlFor(currentProfile.image).url() : ""} alt="Medlembilde" /> <p>Email: {currentProfile?.email}</p>
             <p>Interesser: {currentProfile?.Interesser}</p>
             

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { fetchAllProfiles } from '../sanity/profileServices';
 import { urlFor } from '../sanity/client';
-
+import '../styles/main.scss';
 const Forside = () => {
   const [medlemmer, setmedlemmer] = useState([]);
   const [gruppelogg, setgruppelogg] = useState([]);
@@ -28,14 +28,20 @@ const Forside = () => {
       <h1>Velkommen til Gruppe 32</h1>
       <h2>Medlemmer</h2>
       <div>
+     
+
         {medlemmer.map(medlem => (
           <div key={medlem._id}>
-            <h3>{medlem.name}</h3>
-            <img src={medlem?.image ? urlFor(medlem.image).url() : ""} alt="Medlembilde" />
+                        <h3>{medlem.name}</h3>
+
+          <div className='image-row' key={medlem._id}>
+
+            <img className='image-profile' src={medlem?.image ? urlFor(medlem.image).url() : ""} alt="Medlembilde" />
             <p>{medlem.email}</p>
             <Link to={`/profil/${medlem.name}`}>
               Se profil
             </Link>
+          </div>
           </div>
         ))}
       </div>
