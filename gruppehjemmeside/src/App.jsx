@@ -3,7 +3,7 @@
   import Forside from './components/Forside';
   import Header from './components/Header';
   import Profil from './components/Profil';
-  import Home from './pages/Home';
+  
 
 
 
