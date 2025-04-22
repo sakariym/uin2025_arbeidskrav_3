@@ -32,7 +32,7 @@ const members = [
     { date: "2025-04-01", name: "Anna Loise Berg", task: "Oppstartsmøte", hours: "2 timer" },
     { date: "2025-04-05", name: "Jonas Jan Lie", task: "Designvalg bestemt", hours: "3 timer" },
     { date: "2025-04-10", name: "Emil Sandvik Lundsen", task: "Første kodegjennomgang", hours: "4 timer" },
-    { date: "2025-04-15", name: "Anna", task: "Testing og bugfix", hours: "3 timer" }
+    { date: "2025-04-15", name: "Anna Loise Berg", task: "Testing og bugfix", hours: "3 timer" }
   ];
   
   const Home = () => {

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { fetchAllProfiles } from '../sanity/profileServices';
 
 const Header = () => {
+     
     const [members, setMembers] = useState([]);
 
     const getAllMembers = async () => {
