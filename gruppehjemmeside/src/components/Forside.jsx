@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { fetchAllProfiles } from '../sanity/profileServices';
+import { urlFor } from '../sanity/client';
 
 const Forside = () => {
   const [medlemmer, setmedlemmer] = useState([]);
@@ -30,6 +31,7 @@ const Forside = () => {
         {medlemmer.map(medlem => (
           <div key={medlem._id}>
             <h3>{medlem.name}</h3>
+            <img src={medlem?.image ? urlFor(medlem.image).url() : ""} alt="Medlembilde" />
             <p>{medlem.email}</p>
             <Link to={`/profil/${medlem.name}`}>
               Se profil

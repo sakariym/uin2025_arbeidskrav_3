@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { fetchAllProfiles, fetchProfileByName } from "../sanity/profileServices";
 import { useEffect, useState } from "react";
+import { urlFor } from "../sanity/client";
 
 export default function Profile() {
   const { id } = useParams();
@@ -45,8 +46,7 @@ export default function Profile() {
         <section>
           <h2>Profile: {currentProfile?.name}</h2>
           <div>
-            <p>Image: {currentProfile?.image}</p>
-            <p>Email: {currentProfile?.email}</p>
+          <img src={currentProfile?.image ? urlFor(currentProfile.image).url() : ""} alt="Medlembilde" /> <p>Email: {currentProfile?.email}</p>
             <p>Interesser: {currentProfile?.Interesser}</p>
             
             <h3>Logg:</h3>
