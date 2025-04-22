@@ -12,15 +12,15 @@
 
     return (
     <>
-    <Header />
+    <Header /> 
     
     <Routes>
-      <Route path="/home" element={<Home />} />
-      <Route path="/forside" element={<Forside />}></Route>
+      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Forside />}></Route>
       <Route path="/profil/:id" element={<Profil />} />
       </Routes>
       </>
     )
   }
 
-  export default App
+  export default App;
