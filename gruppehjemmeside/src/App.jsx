@@ -3,10 +3,10 @@
   import Forside from './components/Forside';
   import Header from './components/Header';
   import Profil from './components/Profil';
+  import Home from './pages/Home';
+
+
   
-
-
-
 
   function App() {
 
@@ -15,7 +15,7 @@
     <Header />
     
     <Routes>
-      <Route path="/" element={<Forside />}></Route>
+      <Route path="/" element={<Home />}></Route>
       <Route path="/profil/:id" element={<Profil />} />
       </Routes>
       </>
